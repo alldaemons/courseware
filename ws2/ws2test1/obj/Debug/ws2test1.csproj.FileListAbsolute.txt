@@ -1,0 +1,11 @@
+C:\dev\ws\ws2\ws2test1\bin\Debug\ws2test1.exe.config
+C:\dev\ws\ws2\ws2test1\bin\Debug\ws2test1.exe
+C:\dev\ws\ws2\ws2test1\bin\Debug\ws2test1.pdb
+C:\dev\ws\ws2\ws2test1\bin\Debug\Newtonsoft.Json.dll
+C:\dev\ws\ws2\ws2test1\bin\Debug\System.Net.Http.Formatting.dll
+C:\dev\ws\ws2\ws2test1\bin\Debug\Newtonsoft.Json.xml
+C:\dev\ws\ws2\ws2test1\bin\Debug\System.Net.Http.Formatting.xml
+C:\dev\ws\ws2\ws2test1\obj\Debug\ws2test1.csprojResolveAssemblyReference.cache
+C:\dev\ws\ws2\ws2test1\obj\Debug\ws2test1.csproj.CoreCompileInputs.cache
+C:\dev\ws\ws2\ws2test1\obj\Debug\ws2test1.exe
+C:\dev\ws\ws2\ws2test1\obj\Debug\ws2test1.pdb
