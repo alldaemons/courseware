@@ -9,13 +9,17 @@ IF EXISTS (
 GO
 
 CREATE PROCEDURE dbo.rdv_sp_consultar_curso_est
-	@est_id int = 0
+	@estudiante_id int = 0
 AS
-	SELECT @est_id
+select [est_nombre], [cur_nombre_curso], [cur_id], [mat_year], [mat_semestre]
+from [dbo].[matriculas] 
+inner join [dbo].[estudiantes]	on [mat_est_id] = [est_id]
+inner join [dbo].[cursos]       on [mat_cur_id] = [cur_id]
+where [est_id] = @estudiante_id
 GO
 
 -- =============================================
 -- Example to execute the stored procedure
 -- =============================================
-EXECUTE dbo.rdv_sp_consultar_curso_est 1
+EXECUTE dbo.rdv_sp_consultar_curso_est 177
 GO
