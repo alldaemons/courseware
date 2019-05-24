@@ -1,117 +1,114 @@
-USE [testrdvdw]
+USE [master]
 GO
 
-/****** Object:  Table [dbo].[DimEstudiante]    Script Date: 24/05/2019 10:41:14 ******/
-SET ANSI_NULLS ON
+/****** Object:  Database [testrdvdw]    Script Date: 24/05/2019 12:29:21 ******/
+CREATE DATABASE [testrdvdw]
+ CONTAINMENT = NONE
+ ON  PRIMARY 
+( NAME = N'testrdvdw', FILENAME = N'C:\dev\db\MSSQL14.MSSQLSERVER2017\MSSQL\DATA\testrdvdw.mdf' , SIZE = 8192KB , MAXSIZE = UNLIMITED, FILEGROWTH = 65536KB )
+ LOG ON 
+( NAME = N'testrdvdw_log', FILENAME = N'C:\dev\db\MSSQL14.MSSQLSERVER2017\MSSQL\DATA\testrdvdw_log.ldf' , SIZE = 8192KB , MAXSIZE = 2048GB , FILEGROWTH = 65536KB )
 GO
 
-SET QUOTED_IDENTIFIER ON
+ALTER DATABASE [testrdvdw] SET COMPATIBILITY_LEVEL = 110
 GO
 
-CREATE TABLE [dbo].[DimEstudiante](
-	[estudiante_id] [numeric](18, 0) IDENTITY(1,1)  NOT NULL,
-	[estudiante_est_id] [int]			NOT	NULL,
-	[estudiante_nombre] [nvarchar](300)		NULL,
-	[estudiante_fecha_carga] [datetime] NOT NULL,
-	CONSTRAINT [pk_estudiante_id] PRIMARY KEY ([estudiante_id])
-	WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
+IF (1 = FULLTEXTSERVICEPROPERTY('IsFullTextInstalled'))
+begin
+EXEC [testrdvdw].[dbo].[sp_fulltext_database] @action = 'enable'
+end
 GO
 
-ALTER TABLE [dbo].[DimEstudiante] ADD  CONSTRAINT [DF_DimEstudiante_estudiante_fecha_carga]  DEFAULT (sysdatetimeoffset()) FOR [estudiante_fecha_carga]
+ALTER DATABASE [testrdvdw] SET ANSI_NULL_DEFAULT OFF 
 GO
 
-/****** Object:  Table [dbo].[DimProfesor]    Script Date: 24/05/2019 10:41:14 ******/
-SET ANSI_NULLS ON
+ALTER DATABASE [testrdvdw] SET ANSI_NULLS OFF 
 GO
 
-SET QUOTED_IDENTIFIER ON
+ALTER DATABASE [testrdvdw] SET ANSI_PADDING OFF 
 GO
 
-CREATE TABLE [dbo].[DimProfesor](
-	[profesor_id]  [numeric](18, 0) IDENTITY(1,1)   NOT NULL,
-	[profesor_prof_id]  [int]         NOT NULL,
-	[profesor_nombre] [nvarchar](300)     NULL,
-	[profesor_fecha_carga] [datetime] NOT NULL
-	CONSTRAINT [pk_profesor_id] PRIMARY KEY ([profesor_id])
-	WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
+ALTER DATABASE [testrdvdw] SET ANSI_WARNINGS OFF 
 GO
 
-ALTER TABLE [dbo].[DimProfesor] 
-	ADD  CONSTRAINT [DF_profesor_fecha_carga] DEFAULT (sysdatetimeoffset()) FOR [profesor_fecha_carga]
+ALTER DATABASE [testrdvdw] SET ARITHABORT OFF 
 GO
 
-
-/****** Object:  Table [dbo].[DimCursos]   Script Date: 24/05/2019 10:59:17 ******/
-SET ANSI_NULLS ON
+ALTER DATABASE [testrdvdw] SET AUTO_CLOSE OFF 
 GO
 
-SET QUOTED_IDENTIFIER ON
+ALTER DATABASE [testrdvdw] SET AUTO_SHRINK OFF 
 GO
 
-CREATE TABLE [dbo].[DimCurso](
-	[curso_id] [numeric](18, 0) IDENTITY(1,1) NOT NULL,
-	[curso_cur_id] [nchar](10) NOT NULL,
-	[curso_nombre] [nchar](300) NULL,
-	[curso_fecha_carga] [datetime] NOT NULL,
-	CONSTRAINT [pk_curso_id] PRIMARY KEY ([curso_id])
-	WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
+ALTER DATABASE [testrdvdw] SET AUTO_UPDATE_STATISTICS ON 
 GO
 
-ALTER TABLE [dbo].[DimCurso] 
-	ADD  CONSTRAINT [DF_curso_fecha_carga] DEFAULT (sysdatetimeoffset()) FOR [curso_fecha_carga]
+ALTER DATABASE [testrdvdw] SET CURSOR_CLOSE_ON_COMMIT OFF 
 GO
 
-
-/****** Object:  Table [dbo].[FactCargaMatriculaEstudiante]    Script Date: 24/05/2019 11:48:32 ******/
-SET ANSI_NULLS ON
+ALTER DATABASE [testrdvdw] SET CURSOR_DEFAULT  GLOBAL 
 GO
 
-SET QUOTED_IDENTIFIER ON
+ALTER DATABASE [testrdvdw] SET CONCAT_NULL_YIELDS_NULL OFF 
 GO
 
-CREATE TABLE [dbo].[FactCargaMatriculaEstudiante](
-	[curso_id]				[numeric](18, 0)	NOT NULL,
-	[curso_cur_id]			[nchar](10)			    NULL,
-	[estudiante_id]			[numeric](18, 0)	NOT NULL,
-	[profesor_id]			[numeric](18, 0)	NOT NULL,
-	[mat_year]				[int]				NOT NULL,
-	[mat_semestre]			[int]				NOT NULL,
-	[mat_nota_final_est]	[float]				NOT NULL,
-	[fecha_carga]			[datetime]			NOT NULL
-) ON [PRIMARY]
+ALTER DATABASE [testrdvdw] SET NUMERIC_ROUNDABORT OFF 
 GO
 
-ALTER TABLE [dbo].[FactCargaMatriculaEstudiante]
-	WITH CHECK ADD  CONSTRAINT [fk_curso_id] FOREIGN KEY([curso_id])
-REFERENCES [dbo].[DimCurso] ([curso_id])
+ALTER DATABASE [testrdvdw] SET QUOTED_IDENTIFIER OFF 
 GO
 
-ALTER TABLE [dbo].[FactCargaMatriculaEstudiante]
-	WITH CHECK ADD  CONSTRAINT [fk_profesor_id] FOREIGN KEY([profesor_id])
-REFERENCES [dbo].[DimProfesor] ([profesor_id])
+ALTER DATABASE [testrdvdw] SET RECURSIVE_TRIGGERS OFF 
 GO
 
-ALTER TABLE [dbo].[FactCargaMatriculaEstudiante]
-	WITH CHECK ADD  CONSTRAINT [fk_estudiante_id] FOREIGN KEY([estudiante_id])
-REFERENCES [dbo].[DimEstudiante] ([estudiante_id])
+ALTER DATABASE [testrdvdw] SET  DISABLE_BROKER 
 GO
 
-ALTER TABLE [dbo].[FactCargaMatriculaEstudiante]
-	ADD  CONSTRAINT [DF_mat_semestre] DEFAULT (1) FOR [mat_semestre]
+ALTER DATABASE [testrdvdw] SET AUTO_UPDATE_STATISTICS_ASYNC OFF 
 GO
 
-ALTER TABLE [dbo].[FactCargaMatriculaEstudiante]
-	ADD  CONSTRAINT [DF_mat_year] DEFAULT (0) FOR [mat_year]
+ALTER DATABASE [testrdvdw] SET DATE_CORRELATION_OPTIMIZATION OFF 
 GO
 
-ALTER TABLE [dbo].[FactCargaMatriculaEstudiante]
-	ADD  CONSTRAINT [DF_mat_nota_final_est] DEFAULT (0) FOR [mat_nota_final_est]
+ALTER DATABASE [testrdvdw] SET TRUSTWORTHY OFF 
 GO
 
-ALTER TABLE [dbo].[FactCargaMatriculaEstudiante] 
-	ADD  CONSTRAINT [DF_fecha_carga]  DEFAULT (sysdatetimeoffset()) FOR [fecha_carga]
+ALTER DATABASE [testrdvdw] SET ALLOW_SNAPSHOT_ISOLATION OFF 
+GO
+
+ALTER DATABASE [testrdvdw] SET PARAMETERIZATION SIMPLE 
+GO
+
+ALTER DATABASE [testrdvdw] SET READ_COMMITTED_SNAPSHOT OFF 
+GO
+
+ALTER DATABASE [testrdvdw] SET HONOR_BROKER_PRIORITY OFF 
+GO
+
+ALTER DATABASE [testrdvdw] SET RECOVERY FULL 
+GO
+
+ALTER DATABASE [testrdvdw] SET  MULTI_USER 
+GO
+
+ALTER DATABASE [testrdvdw] SET PAGE_VERIFY CHECKSUM  
+GO
+
+ALTER DATABASE [testrdvdw] SET DB_CHAINING OFF 
+GO
+
+ALTER DATABASE [testrdvdw] SET FILESTREAM( NON_TRANSACTED_ACCESS = OFF ) 
+GO
+
+ALTER DATABASE [testrdvdw] SET TARGET_RECOVERY_TIME = 60 SECONDS 
+GO
+
+ALTER DATABASE [testrdvdw] SET DELAYED_DURABILITY = DISABLED 
+GO
+
+ALTER DATABASE [testrdvdw] SET QUERY_STORE = OFF
+GO
+
+ALTER DATABASE [testrdvdw] SET  READ_WRITE 
 GO
 
