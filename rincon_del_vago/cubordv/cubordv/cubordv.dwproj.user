@@ -3,8 +3,8 @@
     <Configuration>
       <Name>Development</Name>
       <Options>
-        <TargetServer>localhost</TargetServer>
-        <TargetDatabase>cubordv</TargetDatabase>
+        <TargetServer>JERUSALEM1\MSSQLSERVER2017</TargetServer>
+        <TargetDatabase>cubordv1</TargetDatabase>
         <StartObject>
           <ObjectId></ObjectId>
           <ObjectType>Current</ObjectType>

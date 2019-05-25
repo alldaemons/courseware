@@ -1,0 +1,75 @@
+﻿<DeploymentSnapshot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0">
+  <Target>
+    <Database>cubordv1</Database>
+    <Server>JERUSALEM1\MSSQLSERVER2017</Server>
+    <ConnectionString>Data Source=JERUSALEM1\MSSQLSERVER2017;Timeout=0</ConnectionString>
+  </Target>
+  <Options>
+    <TransactionalDeployment>false</TransactionalDeployment>
+    <PartitionDeployment>DeployPartitions</PartitionDeployment>
+    <RoleDeployment>DeployRolesRetainMembers</RoleDeployment>
+    <ProcessingOption>DoNotProcess</ProcessingOption>
+    <OutputScript></OutputScript>
+    <ImpactAnalysisFile></ImpactAnalysisFile>
+    <ConfigurationSettingsDeployment>Deploy</ConfigurationSettingsDeployment>
+    <OptimizationSettingsDeployment>Deploy</OptimizationSettingsDeployment>
+    <WriteBackTableCreation>UseExisting</WriteBackTableCreation>
+  </Options>
+  <Snapshot>
+    <ObjectSnapshots>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.RelationalDataSource</Type>
+        <TimeStamp>qaGedxS5+hr5+TVnO8KzkCmaj5s=24/05/2019 17:00:3924/05/2019 16:59:58</TimeStamp>
+        <ID>
+          <String>RDV_Datamart</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.DataSourceView</Type>
+        <TimeStamp>ppmZA5+kEYPE4MKVn6k0R7C4DzA=24/05/2019 17:18:1724/05/2019 17:12:09</TimeStamp>
+        <ID>
+          <String>RDV Datamart</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>FNILXw9L1+x3g9PZ9KvY/+ETwn8=24/05/2019 17:25:5424/05/2019 17:25:53</TimeStamp>
+        <ID>
+          <String>Curso</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>zYus+CuKieHcsFY4nZtC5xDOXDE=24/05/2019 17:45:0524/05/2019 17:28:21</TimeStamp>
+        <ID>
+          <String>Estudiante</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>S2O8V/tOlZj152YGyKXk5cpRf1E=24/05/2019 17:29:0324/05/2019 17:29:02</TimeStamp>
+        <ID>
+          <String>Profesor</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>Rvw8UUkYeLh+DxrlM6PBAnErQmc=24/05/2019 18:24:5724/05/2019 17:49:079xeAT9HwU9+GsWqE5sgto+XRg+I=24/05/2019 17:49:0924/05/2019 17:49:08</TimeStamp>
+        <ID>
+          <String>Cubo Matricula Estudiantes</String>
+        </ID>
+      </ObjectSnapshot>
+    </ObjectSnapshots>
+    <DatabaseSnapshot>
+      <Type>Microsoft.AnalysisServices.Database</Type>
+      <TimeStamp>mOFDL8VTJSex9VMWKzWL0qnyWzk=24/05/2019 16:52:0624/05/2019 16:52:02</TimeStamp>
+      <ID>
+        <String>cubordv1</String>
+      </ID>
+    </DatabaseSnapshot>
+    <Granularity>Coarse</Granularity>
+  </Snapshot>
+  <AssemblyLocations />
+  <ProcessingComplete>true</ProcessingComplete>
+  <LastDeployed>2019-05-24T23:35:22.4Z</LastDeployed>
+</DeploymentSnapshot>

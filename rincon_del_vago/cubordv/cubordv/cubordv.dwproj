@@ -6,6 +6,32 @@
     <Name>cubordv.database</Name>
     <FullPath>cubordv.database</FullPath>
   </Database>
+  <Cubes>
+    <ProjectItem>
+      <Name>Cubo Matricula Estudiantes.cube</Name>
+      <FullPath>Cubo Matricula Estudiantes.cube</FullPath>
+      <Dependencies>
+        <ProjectItem>
+          <Name>Cubo Matricula Estudiantes.partitions</Name>
+          <FullPath>Cubo Matricula Estudiantes.partitions</FullPath>
+        </ProjectItem>
+      </Dependencies>
+    </ProjectItem>
+  </Cubes>
+  <Dimensions>
+    <ProjectItem>
+      <Name>Curso.dim</Name>
+      <FullPath>Curso.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Estudiante.dim</Name>
+      <FullPath>Estudiante.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Profesor.dim</Name>
+      <FullPath>Profesor.dim</FullPath>
+    </ProjectItem>
+  </Dimensions>
   <DataSources>
     <ProjectItem>
       <Name>RDV_DataWareHouse.ds</Name>

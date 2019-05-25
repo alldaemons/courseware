@@ -15,7 +15,10 @@ Descripción: El modelo debe soportar las siguientes condiciones:
 4. Vista que permita visualizar los profesores por curso: 4_vista_profesores_cursos.sql
 5. Bodega de datos:	5_bodega_de_datos.sql
 6. Datamart con las tablas de hechos y dimensiones: 6_datamart.sql	
-7. Cubo:	Carpeta Solución cubordv
+7. Cubo:	
+	a. 7_diagrama_muestra_ejecucion_cubordv.jpg
+	b. 7_diagrama_muestra_ejecucion_cubordv_2.jpg
+	c. Carpeta Solución cubordv
 8. Paquete de SSIS para mover la data de la base de datos transaccional a la bodega: 
 	a. Muestra de Movimiento de Datos con SSIS: 8_rdv_diagrama_ejecucion_paquete_ssis_1.jpg
 	b. Paquete de Dimensiones: 	SSIS_RDV_Dimensiones.dtsx
