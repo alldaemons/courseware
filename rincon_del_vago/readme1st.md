@@ -24,3 +24,7 @@ Descripción: El modelo debe soportar las siguientes condiciones:
 	b. Paquete de Dimensiones: 	SSIS_RDV_Dimensiones.dtsx
 	c. Paquete de Hechos: 		SSIS_RDV_Hechos_Matriculas_Asignaciones.dtsx
 	d. Script de Paquete de Hechos: 8_script_paquete_ssis_fact_datamart.sql
+9. Generaciòn de Reporte de estudiantes agrupados por curso y sus notas:
+	a. Muestra Generación Reporte:  9_rdv_ejecucion_reporting_services.jpg
+	b. Detalle Reporte:	9_rdv_estudiantes_agrupados_x_curso_y_sus_notas.jpg
+	c. Solución empaquetada en cubordv\report_rdv
