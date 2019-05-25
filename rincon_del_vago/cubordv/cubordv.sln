@@ -5,14 +5,38 @@ VisualStudioVersion = 15.0.28307.645
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{D2ABAB84-BF74-430A-B69E-9DC6D40DDA17}") = "cubordv", "cubordv\cubordv.dwproj", "{448D28BB-954C-49DE-A4FF-C55D8CEACC87}"
 EndProject
+Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "report_rdv", "report_rdv\report_rdv.rptproj", "{48738672-14A9-49DB-B6EC-77A8A2FE0197}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Default = Debug|Default
+		DebugLocal|Default = DebugLocal|Default
 		Development|Default = Development|Default
+		Release|Default = Release|Default
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{448D28BB-954C-49DE-A4FF-C55D8CEACC87}.Debug|Default.ActiveCfg = Development
+		{448D28BB-954C-49DE-A4FF-C55D8CEACC87}.Debug|Default.Build.0 = Development
+		{448D28BB-954C-49DE-A4FF-C55D8CEACC87}.Debug|Default.Deploy.0 = Development
+		{448D28BB-954C-49DE-A4FF-C55D8CEACC87}.DebugLocal|Default.ActiveCfg = Development
+		{448D28BB-954C-49DE-A4FF-C55D8CEACC87}.DebugLocal|Default.Build.0 = Development
+		{448D28BB-954C-49DE-A4FF-C55D8CEACC87}.DebugLocal|Default.Deploy.0 = Development
 		{448D28BB-954C-49DE-A4FF-C55D8CEACC87}.Development|Default.ActiveCfg = Development
 		{448D28BB-954C-49DE-A4FF-C55D8CEACC87}.Development|Default.Build.0 = Development
 		{448D28BB-954C-49DE-A4FF-C55D8CEACC87}.Development|Default.Deploy.0 = Development
+		{448D28BB-954C-49DE-A4FF-C55D8CEACC87}.Release|Default.ActiveCfg = Development
+		{448D28BB-954C-49DE-A4FF-C55D8CEACC87}.Release|Default.Build.0 = Development
+		{448D28BB-954C-49DE-A4FF-C55D8CEACC87}.Release|Default.Deploy.0 = Development
+		{48738672-14A9-49DB-B6EC-77A8A2FE0197}.Debug|Default.ActiveCfg = Debug
+		{48738672-14A9-49DB-B6EC-77A8A2FE0197}.Debug|Default.Build.0 = Debug
+		{48738672-14A9-49DB-B6EC-77A8A2FE0197}.Debug|Default.Deploy.0 = Debug
+		{48738672-14A9-49DB-B6EC-77A8A2FE0197}.DebugLocal|Default.ActiveCfg = DebugLocal
+		{48738672-14A9-49DB-B6EC-77A8A2FE0197}.DebugLocal|Default.Build.0 = DebugLocal
+		{48738672-14A9-49DB-B6EC-77A8A2FE0197}.Development|Default.ActiveCfg = DebugLocal
+		{48738672-14A9-49DB-B6EC-77A8A2FE0197}.Development|Default.Build.0 = DebugLocal
+		{48738672-14A9-49DB-B6EC-77A8A2FE0197}.Release|Default.ActiveCfg = Release
+		{48738672-14A9-49DB-B6EC-77A8A2FE0197}.Release|Default.Build.0 = Release
+		{48738672-14A9-49DB-B6EC-77A8A2FE0197}.Release|Default.Deploy.0 = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
